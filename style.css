@@ -1,6 +1,6 @@
 body {
-    font-family: 'Georgia', serif;
-    background-image: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjExMzktYmctMDRkLmpwZw.jpg');
+    font-family: 'Roboto', sans-serif;
+    background-image: url('https://i.insider.com/6658f96dd0b8e1c832ca90d1?width=1200&format=jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -9,106 +9,107 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    overflow: hidden;
 }
 
-.container {
+.captcha-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 400px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+.captcha-header {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
     text-align: center;
 }
 
-.container h2 {
-    color: #fff;
-    font-size: 2.5em;
-    margin-bottom: 50px;
-    animation: glow 1.5s ease-in-out infinite alternate;
+.text-logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #4285f4;
+    margin: 0;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6;
-  }
-}
-
-#click-me {
-    width: 150px;
-    height: 150px;
-    background-image: url('https://cdn.pixabay.com/photo/2017/07/19/07/01/envelope-2518178_1280.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-#click-me:hover {
-    transform: scale(1.1);
-}
-
-#letter-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-#letter-container:not(.hidden) {
-    opacity: 1;
-    visibility: visible;
-}
-
-.letter {
-    background-color: #fffaf0;
-    padding: 40px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    max-width: 500px;
+.captcha-body {
+    padding: 24px;
     text-align: center;
-    position: relative;
-    transform: scale(0.8);
-    transition: transform 0.5s ease;
 }
 
-#letter-container:not(.hidden) .letter {
-    transform: scale(1);
-}
-
-.letter h1 {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 3em;
-    color: #d2691e;
-    margin-top: 0;
-}
-
-.letter p {
-    font-size: 1.2em;
+.captcha-body h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
     color: #333;
+    margin-top: 0;
+    margin-bottom: 8px;
 }
 
-.creator {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-family: 'Arial', sans-serif;
-    font-size: 1em;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+.captcha-body p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 24px;
 }
 
-.hidden {
-    display: none;
+.selection-group {
+    margin-bottom: 16px;
+    text-align: left;
 }
+
+.selection-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+.captcha-footer {
+    padding: 16px 24px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+
+#verify-btn {
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#verify-btn:hover {
+    background-color: #3367d6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#verify-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.4);
+}
+
