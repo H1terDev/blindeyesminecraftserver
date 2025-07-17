@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const clickMe = document.getElementById('click-me');
-    const letterContainer = document.getElementById('letter-container');
+    const form = document.querySelector('form');
+    const phoneInput = document.getElementById('brand-input');
 
-    clickMe.addEventListener('click', () => {
-        letterContainer.classList.remove('hidden');
-    });
+    form.addEventListener('submit', (event) => {
+        const phoneNumber = phoneInput.value.replace(/\D/g, ''); // Remove non-digit characters
 
-    letterContainer.addEventListener('click', () => {
-        letterContainer.classList.add('hidden');
+        if (phoneNumber.length !== 11 && phoneNumber.length !== 12) {
+            alert('Lütfen geçerli bir telefon numarası girin.');
+            event.preventDefault(); // Stop the form from submitting
+        }
     });
 });
